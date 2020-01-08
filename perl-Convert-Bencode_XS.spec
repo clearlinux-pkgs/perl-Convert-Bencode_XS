@@ -4,13 +4,13 @@
 #
 Name     : perl-Convert-Bencode_XS
 Version  : 0.06
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Convert-Bencode_XS-lib = %{version}-%{release}
+Requires: perl-Convert-Bencode_XS-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,7 +22,6 @@ This format is described at http://bitconjurer.org/BitTorrent/protocol.html
 %package dev
 Summary: dev components for the perl-Convert-Bencode_XS package.
 Group: Development
-Requires: perl-Convert-Bencode_XS-lib = %{version}-%{release}
 Provides: perl-Convert-Bencode_XS-devel = %{version}-%{release}
 Requires: perl-Convert-Bencode_XS = %{version}-%{release}
 
@@ -30,16 +29,18 @@ Requires: perl-Convert-Bencode_XS = %{version}-%{release}
 dev components for the perl-Convert-Bencode_XS package.
 
 
-%package lib
-Summary: lib components for the perl-Convert-Bencode_XS package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Convert-Bencode_XS package.
+Group: Default
+Requires: perl-Convert-Bencode_XS = %{version}-%{release}
 
-%description lib
-lib components for the perl-Convert-Bencode_XS package.
+%description perl
+perl components for the perl-Convert-Bencode_XS package.
 
 
 %prep
 %setup -q -n Convert-Bencode_XS-0.06
+cd %{_builddir}/Convert-Bencode_XS-0.06
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -75,12 +76,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Convert/Bencode_XS.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Convert::Bencode_XS.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Convert/Bencode_XS/Bencode_XS.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Convert/Bencode_XS.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Convert/Bencode_XS/Bencode_XS.so
