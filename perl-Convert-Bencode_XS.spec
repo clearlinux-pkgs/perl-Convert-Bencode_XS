@@ -4,7 +4,7 @@
 #
 Name     : perl-Convert-Bencode_XS
 Version  : 0.06
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Summary  : No detailed summary available
@@ -83,5 +83,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Convert/Bencode_XS.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Convert/Bencode_XS/Bencode_XS.so
+/usr/lib/perl5/*
