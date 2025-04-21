@@ -7,7 +7,7 @@
 #
 Name     : perl-Convert-Bencode_XS
 Version  : 0.06
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IW/IWADE/Convert-Bencode_XS-0.06.tar.gz
 Summary  : No detailed summary available
